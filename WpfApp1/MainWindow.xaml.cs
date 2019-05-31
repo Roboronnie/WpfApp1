@@ -18,11 +18,12 @@ namespace WpfApp1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window // defined as partial bc its MainWindow is being combined with XAML file in runtime to give full window
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); // combine XAML and MainWindow at runtime
         }
+
     }
 }

@@ -5,12 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="{DynamicResource WindowBackgroundBrush}">
     <Window.Resources>
         <system:String x:Key="strHelloWorld">Hello, world!</system:String>
+        
+        <system:String x:Key="ComboBoxTitle">Items:</system:String>
+
+        <x:Array x:Key="ComboBoxItems" Type="system:String">
+            <system:String>Item #1</system:String>
+            <system:String>Item #2</system:String>
+            <system:String>Item #3</system:String>
+        </x:Array>
+
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="Azure" />
+            <GradientStop Offset="1" Color="Aquamarine" />
+        </LinearGradientBrush>
+                             
     </Window.Resources>
-    <StackPanel Margin="10"> 
+    <StackPanel Margin="20">
         <TextBlock Text="{StaticResource strHelloWorld}" FontSize="50" />
         <TextBlock FontSize="25">Another usage of "<TextBlock Text="{StaticResource strHelloWorld}" />" example</TextBlock>
+
+        <Label Content="{StaticResource ComboBoxTitle}"/>
+        <ComboBox ItemsSource="{StaticResource ComboBoxItems}" HorizontalAlignment="Left" Width="200" Margin="10,0,0,0" />
     </StackPanel>
 </Window>
